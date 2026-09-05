@@ -39,5 +39,20 @@ export default [
     languageOptions: {
       parser: tseslint.parser,
     },
+    rules: {
+      // Keep TypeScript formatting consistent without requiring a separate formatter.
+      semi: ["error", "always"],
+      quotes: ["error", "single", { avoidEscape: true }],
+      "object-curly-spacing": ["error", "always"],
+      "array-bracket-spacing": ["error", "never"],
+      "comma-spacing": ["error", { before: false, after: true }],
+      "keyword-spacing": ["error", { before: true, after: true }],
+    },
+  },
+  {
+    files: ["db/**/*.ts", "src/lib/*.ts"],
+    rules: {
+      indent: ["error", 4, { SwitchCase: 1 }],
+    },
   },
 ];
